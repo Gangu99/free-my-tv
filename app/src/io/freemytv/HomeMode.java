@@ -62,7 +62,7 @@ final class HomeMode {
     static final String[] ASSISTANT = {"com.google.android.katniss", "com.android.hotwordenrollment.okgoogle"};
 
     /** Never turned off, not even by mistake (picture, sound, inputs, remote, store). Checked before every disable. */
-    private static final Set<String> PROTECTED = new HashSet<>(Arrays.asList(
+       private static final Set<String> PROTECTED = new HashSet<>(Arrays.asList(
         "com.tcl.ttvs", "com.tvos", "com.tcl.systemserver", "com.tcl.systemui.plugin", "com.tcl.tv", "com.tcl.tvinput",
         "com.tcl.hearaid", "com.dolby.android.audio.service", "com.tcl.globalkeyoverlay", "com.tcl.autopair",
         "com.tcl.UpdatePeripheral", "com.tcl.dashboard", "com.tcl.suspension", "com.tcl.providers.config",
@@ -70,14 +70,13 @@ final class HomeMode {
         "com.tcl.useragreement", "com.tcl.factory.view", "com.tcl.guard", "com.tcl.t_solo",
         "com.google.android.gms", "com.google.android.gsf", "com.android.vending", "com.google.android.apps.mediashell",
         "com.google.android.tv.remote.service", "com.google.android.inputmethod.latin", "com.google.android.webview",
-           "com.android.tv.settings", "com.android.systemui", "android",
-   // Mi TV / MediaTek: inputs (HDMI), tuner, remote keys, updates, voice, Bluetooth
-   "mitv.service", "com.mediatek.tvinput", "com.mediatek.wwtv.tvcenter", "com.mediatek.tv.agent",
-   "com.mediatek.tv.factory", "com.mediatek.tvinputservice.arbitratorservice", "com.mediatek.hotkey.dispatcher",
-   "com.mediatek.network", "com.mediatek.wwtv.setupwizard", "com.mediatek.wwtv.webview",
-   "com.xiaomi.mitv.updateservice", "com.xiaomi.mitv.tvmanager", "com.xiaomi.mitv.res", "com.mitv.tvlock",
-   "com.mitv.milinkservice", "com.xiaomi.mitv.smartshare", "com.xiaomi.wfdsinkhelperservice",
-   "com.google.android.katniss", "com.android.bluetooth", "com.android.providers.tv", PKG));));
+        "com.android.tv.settings", "com.android.systemui", "android",
+        "mitv.service", "com.mediatek.tvinput", "com.mediatek.wwtv.tvcenter", "com.mediatek.tv.agent",
+        "com.mediatek.tv.factory", "com.mediatek.tvinputservice.arbitratorservice", "com.mediatek.hotkey.dispatcher",
+        "com.mediatek.network", "com.mediatek.wwtv.setupwizard", "com.mediatek.wwtv.webview",
+        "com.xiaomi.mitv.updateservice", "com.xiaomi.mitv.tvmanager", "com.xiaomi.mitv.res", "com.mitv.tvlock",
+        "com.mitv.milinkservice", "com.xiaomi.mitv.smartshare", "com.xiaomi.wfdsinkhelperservice",
+        "com.google.android.katniss", "com.android.bluetooth", "com.android.providers.tv", PKG));
 
     /** One switch at a time (jobs can overlap: a boot check and a button press). */
     private static final Object RUN = new Object();
