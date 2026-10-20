@@ -1,0 +1,38 @@
+name: Build FreeMyTV APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Android SDK packages
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "build-tools;34.0.0" "platforms;android-34" >/dev/null
+      - name: Write config
+        env:
+          TMDB_KEY: ${{ secrets.TMDB_KEY }}
+        run: |
+          cat > config.properties <<CFG
+          tmdb_key=$TMDB_KEY
+          tmdb_region=IN
+          latitude=16.5062
+          longitude=80.6480
+          city=Vijayawada
+          language=en
+          show_crypto=false
+          temperature=C
+          disable_assistant=false
+          CFG
+          sed -i 's/^ *//' config.properties
+      - name: Build APK
+        run: chmod +x build.sh && ./build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: freemytv-apk
+          path: FreeMyTV.apk
