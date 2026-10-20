@@ -69,6 +69,10 @@ final class Recs {
         {"globoplay", "globoplay", "com.globo.globotv"},
         {"max", "max", "com.wbd.stream"},
         {"apple tv", "appletv", "com.apple.atve.androidtv.appletv"},
+        // India
+        {"hotstar", "hotstar", "in.startv.hotstar"},
+        {"sony liv", "sonyliv", "com.sonyliv"},
+        {"sun nxt", "sunnxt", "com.suntv.sunnxt"},
     };
     private static final Map<String, String> SERVICE_NAME = new HashMap<>();
     static {
@@ -81,6 +85,9 @@ final class Recs {
         SERVICE_NAME.put("globoplay", "Globoplay");
         SERVICE_NAME.put("max", "Max");
         SERVICE_NAME.put("appletv", "Apple TV");
+        SERVICE_NAME.put("hotstar", "JioHotstar");
+        SERVICE_NAME.put("sonyliv", "SonyLIV");
+        SERVICE_NAME.put("sunnxt", "Sun NXT");
     }
     /** Country for "what streams where" (config.properties "tmdb_region", e.g. US, GB, BR). */
     private static final String REGION = Config.TMDB_REGION.trim().toUpperCase(Locale.ROOT);
